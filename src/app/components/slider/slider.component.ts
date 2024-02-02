@@ -27,9 +27,22 @@ export class SliderComponent implements OnInit {
 
   languageNames = new Intl.DisplayNames(['en'], { type: 'language' })
 
+  numOfSlides = 0
+
   ngOnInit() {
+    this.loadSlides()
+  }
+
+  loadSlides() {
+    this.movies$.subscribe((response) => {
+      this.numOfSlides = response.results.length
+    })
     setInterval(() => {
       this.slideIndex++
+
+      if (this.slideIndex > this.numOfSlides) {
+        this.slideIndex = 0
+      }
     }, 5000)
   }
 }
