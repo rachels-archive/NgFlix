@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { MovieResponse } from '../types/movie'
+import { MovieResponse } from '../shared/types/movie'
 
 @Injectable()
 export class MoviesService {
