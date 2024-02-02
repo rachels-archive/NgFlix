@@ -2,7 +2,7 @@
   <div class="slider">
     @for (movie of movies.results; let movieIndex = $index; track movieIndex) {
       @if (movieIndex === slideIndex) {
-        <div class="slide">
+        <div class="slide" @slideFade>
           <div class="slide-bg">
             <img
               src="{{
