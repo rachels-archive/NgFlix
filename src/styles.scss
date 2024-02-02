@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 @import '../node_modules/modern-normalize/modern-normalize.css';
 @import '../node_modules/primeflex/primeflex.css';
+@import "../node_modules/primeicons/primeicons.css";
 
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    font-size: 14px; //root font size
 }

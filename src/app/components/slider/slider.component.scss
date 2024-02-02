@@ -1,0 +1,46 @@
+.slider {
+    .slide {
+            width: 100%;
+
+        &-bg {
+            height: 35rem;
+            position: relative;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 100%;
+                display: block;
+                background: rgb(0,0,0);
+                background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0.1) 100%); 
+            }
+        
+        }
+
+        &-info {
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            color: #ffffff;
+            font-size: 1.2rem;
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .meta {
+                .pi {
+                    color: rgb(255, 213, 0);
+                }
+                
+            }
+        }
+    }
+}
