@@ -1,38 +1,40 @@
-<div class="slider">
-  @if (movies$ | async; as movies) {
-    @for (movie of movies.results; track $index) {
-      <div class="slide">
-        <div class="slide-bg">
-          <img
-            src="{{
-              'https://image.tmdb.org/t/p/original' + movie.backdrop_path
-            }}"
-            alt="movie banner"
-          />
-        </div>
-        <div class="slide-info">
-          <h2 class="title">{{ movie.title }}</h2>
-          <div class="meta mb-5">
-            <div class="language mb-1">
-              <i class="pi pi-language mr-2"></i>
-              <span>{{ movie.original_language }}</span>
-            </div>
-            <div class="rating mb-1">
-              <i class="pi pi-star-fill mr-2"></i>
-              <span>{{ movie.vote_average }}</span>
-              <span> / 10.0</span>
-            </div>
-            <div class="release-date">
-              <i class="pi pi-calendar mr-1"></i>
-              {{ movie.release_date }}
-            </div>
+@if (movies$ | async; as movies) {
+  <div class="slider">
+    @for (movie of movies.results; let movieIndex = $index; track movieIndex) {
+      @if (movieIndex === slideIndex) {
+        <div class="slide">
+          <div class="slide-bg">
+            <img
+              src="{{
+                'https://image.tmdb.org/t/p/original' + movie.backdrop_path
+              }}"
+              alt="movie banner"
+            />
           </div>
-          <div class="desciption">{{ movie.overview }}</div>
+          <div class="slide-info">
+            <h2 class="title">{{ movie.title }}</h2>
+            <div class="meta mb-5">
+              <div class="language mb-1">
+                <i class="pi pi-language mr-2"></i>
+                <span>{{ movie.original_language }}</span>
+              </div>
+              <div class="rating mb-1">
+                <i class="pi pi-star-fill mr-2"></i>
+                <span>{{ movie.vote_average }}</span>
+                <span> / 10.0</span>
+              </div>
+              <div class="release-date">
+                <i class="pi pi-calendar mr-1"></i>
+                {{ movie.release_date }}
+              </div>
+            </div>
+            <div class="desciption">{{ movie.overview }}</div>
+          </div>
         </div>
-      </div>
+      }
     }
-  }
-</div>
+  </div>
+}
 
 <!-- ... Your other content .
 @if (movies$ | async; as movies) {
