@@ -1,29 +1,37 @@
 <div class="slider">
-    <div class="slide">
-        <div class="slide-bg">
-            <img src="https://img.freepik.com/free-vector/realistic-horizontal-cinema-movie-time-poster-with-3d-glasses-snacks-tickets-clapper-reel-blue-background-with-bokeh-vector-illustration_1284-77013.jpg"
-                alt="movie banner">
-        </div>
-        <div class="slide-info">
-            <h2 class="title">Movie Title</h2>
-            <div class="meta mb-3">
-                <div class="language mb-1">
-                    <i class="pi pi-language mr-1"></i>
-                    <span>English</span>
-                </div>
-                <div class="rating mb-1">
-                    <i class="pi pi-star-fill mr-1"></i>
-                    <span>9.0</span>
-                    <span>/10.0</span>
-                </div>
-                <div class="release-date">
-                    <i class="pi pi-calendar mr-1"></i>
-                    10 Feb 2024
-                </div>
-            </div>
-            <div class="desciption">
-                some text
-            </div>
-        </div>
+  <div class="slide">
+    <div class="slide-bg">
+      <img
+        src="https://img.freepik.com/free-vector/realistic-horizontal-cinema-movie-time-poster-with-3d-glasses-snacks-tickets-clapper-reel-blue-background-with-bokeh-vector-illustration_1284-77013.jpg"
+        alt="movie banner"
+      />
     </div>
+    <div class="slide-info">
+      <h2 class="title">Movie Title</h2>
+      <div class="meta mb-3">
+        <div class="language mb-1">
+          <i class="pi pi-language mr-1"></i>
+          <span>English</span>
+        </div>
+        <div class="rating mb-1">
+          <i class="pi pi-star-fill mr-1"></i>
+          <span>9.0</span>
+          <span>/10.0</span>
+        </div>
+        <div class="release-date">
+          <i class="pi pi-calendar mr-1"></i>
+          10 Feb 2024
+        </div>
+      </div>
+      <div class="desciption">some text</div>
+    </div>
+  </div>
 </div>
+
+@if (movies$ | async; as movies) {
+  @for (movie of movies.results; track $index) {
+    <div class="movie">
+      {{ movie.original_title }}
+    </div>
+  }
+}
