@@ -6,9 +6,12 @@ import { MovieResponse } from '../shared/types/movie'
 export class MoviesService {
   constructor(private http: HttpClient) {}
 
+  private apiUrl = 'https://api.themoviedb.org/3'
+  private apiKey = 'ed1c2f9f17ef7e702b4a97422c78ca9d'
+
   getPopularMovies() {
     return this.http.get<MovieResponse>(
-      'https://api.themoviedb.org/3/movie/popular?api_key=ed1c2f9f17ef7e702b4a97422c78ca9d'
+      `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`
     )
   }
 }

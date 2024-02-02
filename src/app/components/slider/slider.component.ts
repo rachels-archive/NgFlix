@@ -29,6 +29,8 @@ export class SliderComponent implements OnInit {
 
   numOfSlides = 0
 
+  imageUrl = 'https://image.tmdb.org/t/p/original/'
+
   ngOnInit() {
     this.loadSlides()
   }

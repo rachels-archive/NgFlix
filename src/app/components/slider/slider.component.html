@@ -5,10 +5,8 @@
         <div class="slide" @slideFade>
           <div class="slide-bg">
             <img
-              src="{{
-                'https://image.tmdb.org/t/p/original' + movie.backdrop_path
-              }}"
-              alt="movie banner"
+              src="{{ imageUrl + movie.backdrop_path }}"
+              alt="{{ movie.title }}"
             />
           </div>
           <div class="slide-info">
