@@ -16,16 +16,16 @@
             <div class="meta mb-5">
               <div class="language mb-1">
                 <i class="pi pi-language mr-2"></i>
-                <span>{{ movie.original_language }}</span>
+                <span>{{ languageNames.of(movie.original_language) }}</span>
               </div>
               <div class="rating mb-1">
                 <i class="pi pi-star-fill mr-2"></i>
-                <span>{{ movie.vote_average }}</span>
+                <span>{{ movie.vote_average.toFixed(1).toString() }}</span>
                 <span> / 10.0</span>
               </div>
               <div class="release-date">
                 <i class="pi pi-calendar mr-1"></i>
-                {{ movie.release_date }}
+                {{ movie.release_date | date: 'MMM dd, yyyy' }}
               </div>
             </div>
             <div class="desciption">{{ movie.overview }}</div>

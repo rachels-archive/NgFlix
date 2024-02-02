@@ -13,6 +13,8 @@ export class SliderComponent implements OnInit {
 
   slideIndex = 0
 
+  languageNames = new Intl.DisplayNames(['en'], { type: 'language' })
+
   ngOnInit() {
     setInterval(() => {
       this.slideIndex++
