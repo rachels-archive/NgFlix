@@ -1,19 +1,15 @@
-<div class="banner">
-  <div class="grid">
-    <div class="col-2">
-      <a class="item">
-        <div class="item-rating">
-          <i class="pi pi-star"></i>
-          <span>8/10</span>
+@if (movies$ | async; as movies) {
+  <div class="banner container">
+    <div class="grid">
+      @for (
+        movie of movies.results;
+        let movieIndex = $index;
+        track movieIndex
+      ) {
+        <div class="col-12 md:col-4 lg:col-2">
+          <app-banner-item [item]="movie"></app-banner-item>
         </div>
-        <div class="item-image">
-          <img
-            src="https://image.tmdb.org/t/p/w780/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg"
-            alt=""
-          />
-        </div>
-        <div class="item-title">Title</div>
-      </a>
+      }
     </div>
   </div>
-</div>
+}
