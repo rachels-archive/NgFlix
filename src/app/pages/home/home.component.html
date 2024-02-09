@@ -13,3 +13,10 @@
     [movies]="topRatedMovies"
   ></app-banner>
 }
+
+@if (popularTvShows$ | async; as popularTvShows) {
+  <app-banner
+    [title]="'Popular TV Shows'"
+    [movies]="popularTvShows"
+  ></app-banner>
+}
