@@ -9,7 +9,7 @@ import { MoviesService } from '../../services/movies.service'
 export class HomeComponent {
   constructor(private moviesService: MoviesService) {}
 
-  upcomingMovies$ = this.moviesService.getUpcomingMovies()
+  upcomingMovies$ = this.moviesService.getMoviesByType('upcoming')
 
-  topRatedMovies$ = this.moviesService.getTopRatedMovies()
+  topRatedMovies$ = this.moviesService.getMoviesByType('top_rated')
 }

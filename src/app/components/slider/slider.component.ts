@@ -22,7 +22,7 @@ import { IMAGE_BASE_URL } from '../../shared/constants'
 export class SliderComponent implements OnInit {
   constructor(private moviesService: MoviesService) {}
 
-  movies$ = this.moviesService.getPopularMovies()
+  movies$ = this.moviesService.getMoviesByType('popular')
 
   slideIndex = 0
 
@@ -38,7 +38,7 @@ export class SliderComponent implements OnInit {
 
   loadSlides() {
     this.movies$.subscribe((response) => {
-      this.numOfSlides = response.results.length
+      this.numOfSlides = response.length
     })
     setInterval(() => {
       this.slideIndex++

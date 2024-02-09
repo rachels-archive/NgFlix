@@ -3,13 +3,13 @@
 @if (upcomingMovies$ | async; as upcomingMovies) {
   <app-banner
     [title]="'Upcoming Movies'"
-    [movies]="upcomingMovies.results"
+    [movies]="upcomingMovies"
   ></app-banner>
 }
 
 @if (topRatedMovies$ | async; as topRatedMovies) {
   <app-banner
     [title]="'Top Rated Movies'"
-    [movies]="topRatedMovies.results"
+    [movies]="topRatedMovies"
   ></app-banner>
 }
