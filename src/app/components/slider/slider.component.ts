@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { MoviesService } from '../../services/movies.service'
 import { animate, state, style, transition, trigger } from '@angular/animations'
+import { IMAGE_BASE_URL } from '../../shared/constants'
 
 @Component({
   selector: 'app-slider',
@@ -29,7 +30,7 @@ export class SliderComponent implements OnInit {
 
   numOfSlides = 0
 
-  imageUrl = 'https://image.tmdb.org/t/p/original/'
+  imageBaseUrl = IMAGE_BASE_URL
 
   ngOnInit() {
     this.loadSlides()

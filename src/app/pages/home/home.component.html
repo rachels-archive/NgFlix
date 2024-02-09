@@ -1,4 +1,15 @@
 <app-slider></app-slider>
-<p>Popular Movies</p>
-<app-banner></app-banner>
-<p>TV Shows</p>
+
+@if (upcomingMovies$ | async; as upcomingMovies) {
+  <app-banner
+    [title]="'Upcoming Movies'"
+    [movies]="upcomingMovies.results"
+  ></app-banner>
+}
+
+@if (topRatedMovies$ | async; as topRatedMovies) {
+  <app-banner
+    [title]="'Top Rated Movies'"
+    [movies]="topRatedMovies.results"
+  ></app-banner>
+}

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { MoviesService } from '../../services/movies.service'
+import { Movie } from '../../shared/types/movie'
 
 @Component({
   selector: 'app-banner',
@@ -9,7 +10,6 @@ import { MoviesService } from '../../services/movies.service'
 export class BannerComponent {
   constructor(private moviesService: MoviesService) {}
 
-  items = Array<number>(6).fill(0)
-
-  movies$ = this.moviesService.getPopularMovies()
+  @Input() title!: string
+  @Input() movies!: Movie[]
 }

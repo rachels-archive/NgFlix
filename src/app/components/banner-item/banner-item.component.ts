@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { Movie } from '../../shared/types/movie'
+import { IMAGE_BASE_URL } from '../../shared/constants'
 
 @Component({
   selector: 'app-banner-item',
@@ -7,7 +8,7 @@ import { Movie } from '../../shared/types/movie'
   styleUrl: './banner-item.component.scss',
 })
 export class BannerItemComponent {
-  @Input() item!: Movie
+  @Input() item: Movie | null = null
 
-  imageUrl = 'https://image.tmdb.org/t/p/original/'
+  imageBaseUrl = IMAGE_BASE_URL
 }

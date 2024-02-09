@@ -1,10 +1,10 @@
 <a class="item">
   <div class="item-rating">
     <i class="pi pi-star-fill mr-1"></i>
-    <span>{{ item.vote_average.toFixed(1).toString() }} / 10 </span>
+    <span>{{ item?.vote_average?.toFixed(1)?.toString() }} / 10 </span>
   </div>
   <div class="item-image">
-    <img src="{{ imageUrl + item.backdrop_path }}" alt="" />
+    <img src="{{ imageBaseUrl + '/w780' + item?.backdrop_path }}" alt="" />
   </div>
-  <div class="item-title">{{ item.title }}</div>
+  <div class="item-title">{{ item?.title }}</div>
 </a>

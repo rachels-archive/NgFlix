@@ -1,12 +1,9 @@
-@if (movies$ | async; as movies) {
+@if (movies) {
   <div class="banner container">
+    <h1>{{ title }}</h1>
     <div class="grid">
-      @for (
-        movie of movies.results;
-        let movieIndex = $index;
-        track movieIndex
-      ) {
-        <div class="col-12 md:col-4 lg:col-2">
+      @for (movie of movies; track $index) {
+        <div class="col-12 md:col-4 lg:col-3 xl:col-2">
           <app-banner-item [item]="movie"></app-banner-item>
         </div>
       }
