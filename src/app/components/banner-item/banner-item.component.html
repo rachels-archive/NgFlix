@@ -4,7 +4,17 @@
     <span>{{ item?.vote_average?.toFixed(1)?.toString() }} / 10 </span>
   </div>
   <div class="item-image">
-    <img src="{{ imageBaseUrl + 'w780' + item?.backdrop_path }}" alt="" />
+    @if (item?.backdrop_path) {
+      <img
+        src="{{ imageBaseUrl + 'w780' + item?.backdrop_path }}"
+        alt="{{ item?.original_title }}"
+      />
+    } @else {
+      <img
+        src="https://static.wixstatic.com/media/4b4d1c_b163665d59f3472ebabeb1b2a322eb9b~mv2.png"
+        alt="{{ item?.original_title }}"
+      />
+    }
   </div>
   <div class="item-title">{{ item?.title }}</div>
 </a>
