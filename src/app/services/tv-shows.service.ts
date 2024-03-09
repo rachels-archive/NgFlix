@@ -10,7 +10,7 @@ export class TvShowService {
   constructor(private http: HttpClient) {}
 
   private apiUrl = 'https://api.themoviedb.org/3'
-  private apiKey = 'ed1c2f9f17ef7e702b4a97422c78ca9d'
+  private apiKey = ''
 
   getTvShowsByType(type: string, count: number = 20) {
     return this.http
