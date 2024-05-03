@@ -4,7 +4,6 @@
 NgFlix is a simple movie and TV show browsing application built with Angular v17 and the TMDB API. It allows users to explore a wide range of movies and TV shows, view details about each title, and search for specific content.
 
 ## Features
-![Screenshot of NgFlix](https://github.com/rachels-archive/NgFlix/assets/79963756/43853eb4-96c6-4c81-aea5-ac8e262583c2)
 
 - **Browse**: Explore a curated collection of movies and TV shows.
 - **Search**: Find specific titles using the search functionality.
@@ -23,7 +22,6 @@ NgFlix is a simple movie and TV show browsing application built with Angular v17
 1. Clone the repository:
 ```
 git clone https://github.com/rachels-archive/NgFlix.git
-
 ```
 
 2. Navigate to the project directory:
@@ -47,8 +45,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
----
 
 ## Acknowledgments
 
